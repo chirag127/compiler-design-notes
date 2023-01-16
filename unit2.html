@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Unit 2</title>
+</head>
+
+<body>
+    <h1>Unit 2</h1>
+    <h2>Basic Parsing Techniques</h2>
+
+    <p>Parsing is the process of analyzing a string of symbols, either in natural language or in computer languages,
+        according to the rules of a formal grammar. This process can be used to determine the meaning of a document and
+        to
+        find errors in the syntax of a program. Parsing techniques are used in a variety of applications, including
+        natural
+        language processing, compiler design, and computer networking.</p>
+
+    <h2> Parsers</h2>
+
+    <p>A parser is a software component that takes input data (usually a stream of characters) and builds a data
+        structure –
+        often some kind of parse tree, abstract syntax tree or other hierarchical structure – giving a structural
+        representation of the input while checking for correct syntax. Parsers are used throughout computer science, in
+        applications from web search engines to programming language compilers.</p>
+
+    <p>A parser is often preceded by a lexical analyzer (or scanner), which creates tokens from the sequence of input
+        characters. The parser then creates a tree from the tokens, using the rules of a formal grammar. Parsers are
+        usually
+        used to validate the syntax of an input. The parsed data structure may be used directly by a program, or it may
+        be
+        converted into an abstract syntax tree or some other intermediate form for further processing.</p>
+
+    <p>Most programming languages have a parser to convert programs written in that language into some form of internal
+        representation. This is often a tree-like data structure, such as an abstract syntax tree or parse tree. This
+        internal representation can then be used by a compiler or interpreter to execute the program.</p>
+
+    <p>Parsers are also used to validate the syntax of HTML, XML, and other markup languages. In this case, the parser
+        checks for valid tags, nesting, and other syntactic requirements of the language. If the parser finds any
+        errors, it
+        will usually stop parsing and display an error message.</p>
+
+    <p>Parsers are also used in compilers for programming languages. In this case, the parser checks the syntax of the
+        program and builds an abstract syntax tree. This abstract syntax tree is then passed to the code generator,
+        which
+        generates code in the target language.</p>
+
+    <p>In web search engines, parsers are used to process HTML documents and extract useful information. This
+        information is
+        then stored in an index, which is used to quickly search for relevant documents.</p>
+
+    <p>Parsers are also used in natural language processing (NLP). In this case, the parser is used to process text
+        written
+        in a natural language and build a tree representing the syntactic structure of the text. This tree can then be
+        used
+        for various purposes, such as language understanding or machine translation.</p>
+
+    <h2> Shift reduce parsing</h2>
+
+    <p>Shift Reduce Parsing is a type of bottom-up parsing. It is used to parse a sentence in a given grammar to
+        determine
+        if it is a syntactically correct sentence. This is done by shifting input symbols one at a time from the input
+        buffer onto a stack and reducing them with the help of a set of production rules.</p>
+
+    <p>The parsing process starts by placing a special symbol (such as start symbol or end of file marker) at the bottom
+        of
+        the stack. Then, the parser starts reading the input symbols from left to right and shifts them one by one onto
+        the
+        stack. Meanwhile, the parser checks for any production rule that can reduce the symbols on the stack. If a
+        production rule is available, then it is applied and the symbols are reduced to one or more non-terminal
+        symbols.
+    </p>
+
+    <p>The process of shifting and reducing continues until the stack contains only one symbol and the input buffer is
+        empty. If the stack contains the start symbol and the input buffer is empty, then the sentence is accepted as a
+        valid sentence. Otherwise, the sentence is rejected as an invalid sentence.</p>
+
+    <p>Shift Reduce Parsing is efficient and simple to implement. It is also used in many modern programming languages
+        as a
+        way to parse and interpret code. However, it is not as powerful as other parsing techniques, such as top-down
+        parsing or recursive descent parsing.</p>
+
+    <h2> operator precedence parsing</h2>
+
+    <p>Operator precedence parsing is a type of parsing technique used to parse arithmetic expressions that use
+        operators of
+        varying precedence. It is also known as recursive descent parsing. The basic idea behind operator precedence
+        parsing
+        is to use the order of operations to determine the order in which operations should be performed, and to parse
+        the
+        expression accordingly. </p>
+
+    <p>In order to parse an expression using operator precedence parsing, the parser needs to understand the order of
+        operations. This is typically done by assigning a numerical precedence value to each operator, with higher
+        precedence operations being evaluated first. The parser then uses these precedence values to determine the order
+        in
+        which operations should be performed. </p>
+
+    <p>Once the parser has determined the order of operations, it can then parse the expression by recursively applying
+        the
+        operations in the order of precedence. This means that the parser will start at the highest precedence operator,
+        evaluate the expression immediately before and after it, and then move on to the next highest precedence
+        operator.
+        This process is repeated until all of the operators have been evaluated. </p>
+
+    <p>Operator precedence parsing is a relatively simple parsing technique, but it has some significant limitations.
+        For
+        example, it can only handle expressions that contain operators of the same precedence, and it cannot handle
+        expressions that contain parentheses. Furthermore, the parser cannot determine the correct order of operations
+        if
+        the precedence values are not assigned correctly. </p>
+
+    <p>Overall, operator precedence parsing is a useful technique for parsing arithmetic expressions, but it is limited
+        in
+        its applications. It is not suitable for more complex expressions, and it is important to understand its
+        limitations
+        when using it in order to ensure that the parser is correctly interpreting the expression. </p>
+    <h2> top down
+        parsing</h2>
+
+    <p>Top-down parsing is a parsing technique used in computer science to analyze the structure of a string of symbols.
+        It
+        is a predictive parser that uses a set of production rules to parse the input string. The parser starts at the
+        top
+        of the parse tree and works its way down to the leaves. The parser builds up the parse tree by replacing the
+        non-terminal symbols at the top of the tree with their respective right-hand sides, until the tree consists of
+        only
+        terminal symbols.</p>
+
+    <p>The main advantage of top-down parsing is that it is easy to implement. It is also easy to modify the parse tree,
+        making it possible to add new rules or modify existing ones. This makes top-down parsing an attractive option
+        for
+        compilers.</p>
+
+    <p>The main disadvantage of top-down parsing is that it is not a very efficient approach. It can take a long time to
+        parse a large input string, and it can be difficult to find the correct production rules for a given input
+        string.
+        Additionally, top-down parsing is not suitable for generating code from a parse tree, since it does not generate
+        a
+        single parse tree for a given input string.</p>
+
+    <p>Top-down parsing can be used as a stand-alone parser, or as a component of a more complex parsing system. It is
+        used
+        in compilers, interpreters, and other applications that require analyzing the structure of a string of symbols.
+    </p>
+
+    <h2> predictive parsers Automatic Construction of efficient Parsers: LR parsers</h2>
+
+    <p>Predictive parsers are computer programs that are used to analyze the syntax of a programming language. They are
+        based on a formal grammar of the language and can be used to build efficient parsers for the language. The two
+        most
+        common types of predictive parsers are LR parsers and LL parsers.</p>
+
+    <p>LR parsers are parser generators that are based on the Left-to-Right, Right-most derivation parsing technique.
+        They
+        are used to create efficient parsers for a wide range of programming languages. LR parsers are able to parse any
+        context-free grammar with a single pass over the input text, making them highly efficient. They are also able to
+        detect and identify errors quickly. LR parsers are often used for the automatic construction of efficient
+        parsers
+        for a variety of programming languages, such as C, Java, and Python.</p>
+
+    <p>LL parsers are parser generators that are based on the Left-to-Right, Left-most derivation parsing technique.
+        They
+        are used to create parsers for a wide range of programming languages. LL parsers are able to parse any
+        context-free
+        grammar with a single pass over the input text, making them highly efficient. They are also able to detect and
+        identify errors quickly. LL parsers are often used for the automatic construction of efficient parsers for a
+        variety
+        of programming languages, such as C, Java, and Python.</p>
+
+    <p>Both LR and LL parsers are used in the automatic construction of efficient parsers for a variety of programming
+        languages. They are both based on formal grammars and can be used to quickly and efficiently parse code. LR
+        parsers
+        are more efficient in terms of memory and time, while LL parsers are better at detecting and identifying errors.
+    </p>
+
+    <h2> the canonical
+        Collection of LR(0) items</h2>
+
+    <p>The canonical collection of LR(0) items is a method of constructing a deterministic finite automaton (DFA) from a
+        context-free grammar (CFG). It is used in the construction of LR(0) parsers, which are used to parse and
+        interpret
+        strings in a language defined by a CFG. The canonical collection of LR(0) items is the result of applying the
+        LR(0)
+        parser construction algorithm to a CFG.</p>
+
+    <p>The canonical collection of LR(0) items is generated by the LR(0) parser construction algorithm. This algorithm
+        takes
+        a CFG as input and uses it to construct a set of LR(0) items. These items consist of a set of symbols and a set
+        of
+        rules, which define the grammar of the language that is being parsed. Each item consists of a set of symbols and
+        a
+        set of rules, which together form a transition function.</p>
+
+    <p>The LR(0) items are used to construct a DFA, which is used to parse and interpret the strings in the language.
+        The
+        DFA is constructed by applying the LR(0) parser construction algorithm to the canonical collection of LR(0)
+        items.
+        This process involves constructing a set of states, which are linked together by a set of transitions. Each
+        transition is defined by a set of symbols and a set of rules, which together define the behavior of the DFA.</p>
+
+    <p>The canonical collection of LR(0) items is used in the construction of LR(0) parsers, which are used to parse and
+        interpret strings in a language defined by a CFG. It is also used in the construction of LR(1) and LALR(1)
+        parsers,
+        which are used to parse and interpret strings in languages defined by more complex CFGs. The LR(0) parser
+        construction algorithm is used to construct the DFA from the canonical collection of LR(0) items, which is used
+        for
+        the LR(0) parser.</p>
+
+    <p>The canonical collection of LR(0) items is an important concept in the construction of LR(0) parsers. It is used
+        to
+        generate a set of LR(0) items which are used in the construction of the DFA. This DFA is then used to parse and
+        interpret strings in the language which is defined by the CFG. The LR(0) parser construction algorithm is used
+        to
+        generate the LR(0) items from the canonical collection of LR(0) items.</p>
+
+    <h2> constructing SLR parsing tables</h2>
+
+    <p>SLR parsing tables are tables used in a bottom-up parser to determine if a string is a valid sentence in a given
+        grammar. It is an acronym for "Simple LR Parsing Table," which is an extension of LR Parsing, a type of parser
+        that
+        uses a bottom-up method to parse a string of tokens. The SLR parsing table is typically used to determine if a
+        sentence is syntactically correct and valid according to the grammar. </p>
+
+    <p>The SLR parsing table is created by taking the rules of the grammar and placing them in the table, in a specific
+        format. The table contains two columns, one for the left-hand side of the rule, and one for the right-hand side
+        of
+        the rule. Each row in the table represents a single rule in the grammar. Additionally, each row contains
+        information
+        about the rule such as the non-terminal symbols, the terminal symbols, and the action to take when the rule is
+        encountered. </p>
+
+    <p>To construct an SLR parsing table, the first step is to create the sets of first and follow symbols. The first
+        symbols are the symbols that can appear at the beginning of a sentence according to the grammar. The follow
+        symbols
+        are the symbols that can appear after a certain non-terminal symbol. Once the sets of first and follow symbols
+        are
+        created, the table can be constructed. </p>
+
+    <p>The next step is to construct the table. For each rule in the grammar, a row is created in the table. The
+        left-hand
+        side of the rule is placed in the first column, and the right-hand side of the rule is placed in the second
+        column.
+        Additionally, each row contains information about the rule such as the non-terminal symbols, the terminal
+        symbols,
+        and the action to take when the rule is encountered. </p>
+
+    <p>Once the table is constructed, the parser can be used to parse the string of tokens. The parser will start at the
+        beginning of the string and move forward one token at a time. As it moves through the string, it will look up
+        the
+        appropriate action in the table and take the appropriate action. If the action is to shift a token, the parser
+        will
+        move to the next token. If the action is to reduce a rule, the parser will take the right-hand side of the rule
+        and
+        replace it with the left-hand side. </p>
+
+    <p>The SLR parsing table is a useful tool for determining if a string of tokens is valid according to the grammar.
+        By
+        constructing the table, the parser can quickly and efficiently determine if a string is valid. </p>
+    <h2> constructing Canonical LR parsing
+        tables</h2>
+
+    <p>Canonical LR parsing is a type of shift-reduce parsing algorithm that is used to parse strings in a variety of
+        programming languages. It is based on the LR parsing method, which is an efficient parsing technique that can be
+        used to recognize the structure of a program. Canonical LR parsing is used to construct LR parsing tables, which
+        are
+        used to determine how a grammar should be parsed.</p>
+
+    <p>The process of constructing canonical LR parsing tables begins by constructing a grammar. This grammar must be
+        converted into a form that can be used by the parser. This is done by creating a set of productions that
+        describe
+        the structure of the language. Once the grammar is in the proper form, it must be converted into an LR parser.
+        This
+        involves creating an LR state machine that can be used to parse the grammar.</p>
+
+    <p>Once the LR state machine is created, it can be used to construct LR parsing tables. These tables contain the
+        information needed to parse the grammar. The tables are created by first constructing the set of valid strings
+        that
+        can be parsed. This set of strings is then used to create a set of LR parsing states. Each state is labeled with
+        a
+        terminal symbol, and the transitions from one state to another are determined by the grammar.</p>
+
+    <p>Once the LR parsing states have been created, the LR parsing tables can be constructed. These tables contain the
+        information needed to recognize the grammar. Each table contains a set of rules that determine how the parser
+        should
+        interpret the input. The tables also contain information about how to handle errors and ambiguities that may
+        arise
+        during parsing. The LR parsing tables must be constructed in a way that is consistent with the grammar.</p>
+
+    <p>After the LR parsing tables are constructed, they can be used to parse the input. The parser will use the
+        information
+        in the tables to determine how to interpret the input. Once the parser has determined the structure of the
+        input, it
+        can generate the output. The output is a parse tree that contains the structure of the input.</p>
+
+    <p>Canonical LR parsing is a powerful tool that can be used to parse a variety of languages. The process of
+        constructing
+        LR parsing tables is a complex one, but it is essential for constructing an efficient parser. The LR parsing
+        tables
+        must be constructed in a way that is consistent with the grammar, and they must contain the information needed
+        to
+        interpret the input.</p>
+    <h2> Constructing LALR parsing tables</h2>
+
+    <p>Constructing LALR parsing tables is a process used in computer science for compiling a computer program. It is a
+        type
+        of bottom-up parser that uses lookahead sets to decide which production rules to use when constructing a parse
+        tree.
+        The process of constructing an LALR parsing table begins with creating a set of states for the machine to work
+        through. This can be done by creating a set of core items, which are the production rules with a single dot.
+        Each
+        state is made up of a set of core items and can then be used to construct the LALR parsing table.</p>
+
+    <p>The next step of the process is to create the lookahead sets. These sets are used to help the machine decide
+        which
+        production rules should be used in each state. In order to create these sets, the machine must look at the
+        right-hand side of the production rule and determine what symbols can follow that rule. This is done by looking
+        at
+        the next symbols in the input string and determining if they can follow the production rule.</p>
+
+    <p>Once the lookahead sets have been created, the machine can then use them to construct the LALR parsing table.
+        This
+        table is composed of a set of states, each of which contains a set of production rules and the lookahead sets
+        that
+        correspond to each production rule. The machine will then use this table to determine which production rule to
+        use
+        in each state. When constructing the LALR parsing table, the machine will also need to determine which states
+        are
+        reachable from each other, and which transitions will be followed when a certain state is reached.</p>
+
+    <p>Once the LALR parsing table has been constructed, it can then be used by the machine to parse the input string.
+        The
+        machine will use the table to determine which production rules should be used in each state, and then construct
+        a
+        parse tree by following those production rules. This parse tree will then be used to evaluate the program and
+        determine if it is syntactically and semantically correct.</p>
+
+    <h2>using ambiguous grammars</h2>
+
+    <p>Ambiguous grammars are a powerful tool for writing expressive and concise code. They allow for the efficient
+        representation of complex ideas in a concise and easily understood format. Ambiguous grammars can be used to
+        create
+        complex, yet concise programs that are easy to read and understand by humans, while providing a way to quickly
+        and
+        accurately parse and interpret the code.</p>
+
+    <p>Ambiguous grammars are constructed using a combination of symbols, rules, and patterns. Symbols are used to
+        represent
+        individual concepts, while rules are used to define relationships between symbols. Patterns are used to describe
+        how
+        symbols should be combined and ordered to form valid code. Ambiguous grammars allow for the creation of code
+        that
+        can have multiple valid interpretations, depending on the context in which it is used.</p>
+
+    <p>Ambiguous grammars are often used in programming languages, as they allow for the creation of code that is both
+        efficient and expressive. For example, in a programming language such as JavaScript, ambiguous grammars can be
+        used
+        to create code that can be interpreted in multiple ways, depending on the context. For instance, a single line
+        of
+        JavaScript code may be interpreted as a single statement, or it may be interpreted as several statements,
+        depending
+        on the context.</p>
+
+    <p>Ambiguous grammars are also used in natural language processing, as they can help to accurately parse and
+        interpret
+        sentences. For example, ambiguous grammars can be used to create code that can accurately identify the structure
+        of
+        a sentence, such as identifying the subject, verb, and object of a sentence. This can be used to create programs
+        that can understand natural language and accurately interpret user input.</p>
+
+    <p>Overall, ambiguous grammars are a powerful tool for writing expressive and concise code. They allow for the
+        efficient
+        representation of complex ideas in a concise and easily understood format. They can be used to create code that
+        can
+        have multiple valid interpretations, depending on the context in which it is used, and can also be used for
+        natural
+        language processing. </p>
+
+    <h2>Using LR parsing tables</h2>
+
+    <p>LR parsing tables are a powerful tool for parsing a variety of languages. They are used to determine how a
+        grammar
+        should be parsed, and they can be used to recognize the structure of a program. The process of constructing LR
+        parsing tables begins by constructing a grammar. This grammar must be converted into a form that can be used by
+        the
+        parser. This is done by creating a set of productions that describe the structure of the language.</p>
+    <h2> an automatic parser
+        generator</h2>
+
+    <p>An automatic parser generator is a program that can be used to create a parser from a grammar definition. It is
+        usually used to create a parser for a specific language, such as a programming language or a domain-specific
+        language. The parser generator will take the grammar definition as input and generate a parser that can be used
+        to
+        parse input that conforms to the grammar.</p>
+
+    <p>The generated parser will usually include a set of rules that specify how the input should be parsed. These rules
+        can
+        be written in a variety of ways, such as using a formal grammar, or a more informal set of rules. The rules will
+        often include tokens, which are symbols that have a specific meaning and can be used to identify certain
+        patterns in
+        the input. The parser will then use these tokens to match the input to the rules, and thus determine the
+        structure
+        of the input.</p>
+
+    <p>The parser generator will also generate code that is used to generate the output of the parser. This code is
+        often
+        written in a language such as C or Java, and is used to create the final output of the parser. This output can
+        be in
+        the form of an abstract syntax tree, or it can be in a more concrete form such as a stream of tokens or a parse
+        tree.</p>
+
+    <p>The parser generator can also generate code for reporting errors and for handling input that does not conform to
+        the
+        grammar. This code can be used to help the user identify errors in the input and make corrections before the
+        parser
+        is run. This can be particularly useful when the user is writing code that needs to conform to a specific
+        language.
+    </p>
+
+    <p>The parser generator can also be used to optimize the parsing process. This can be done by eliminating
+        unnecessary
+        tokens or by rewriting the grammar in a more efficient way. This can be used to reduce the amount of time it
+        takes
+        to parse the input, or to make the parser more efficient.</p>
+
+    <h2> implementation of LR parsing tables.</h2>
+
+    <p>LR Parsing Tables are used to create a parse tree for a given grammar. The parser uses the tables to determine
+        which
+        production rules to apply to a given input string. The construction of LR Parsing Tables requires a bit of work
+        to
+        set up, but the resulting parse tree can be used to quickly and accurately parse a language.</p>
+
+    <p>The first step in constructing LR Parsing Tables is to create a set of states. Each state represents a step in
+        the
+        parsing process. The states are represented as a directed graph, with each node representing a state and each
+        edge
+        representing a transition between states.</p>
+
+    <p>The next step is to create the transition table. This table contains a row for each state and a column for each
+        grammar symbol. The value in the cell at the intersection of a state and a symbol represents the action to be
+        taken
+        when the parser is in that state and encounters that symbol. These actions can be either a shift, where the
+        parser
+        moves to a new state, or a reduction, where the parser applies a production rule to the current state.</p>
+
+    <p>The transition table is then used to construct the LR Parsing Tables. The LR Parsing Tables are a set of tables
+        that
+        describe how the parser should handle each possible input symbol. The tables are created by traversing the
+        transition graph and constructing a table for each state. The table for each state contains the action to take
+        when
+        a specific input symbol is encountered.</p>
+
+    <p>Once the LR Parsing Tables have been constructed, the parser can then use them to parse the input string. The
+        parser
+        works by starting in the initial state and then using the transition table to determine the next state. This
+        process
+        is repeated until the parser reaches the final state. Once the parser has reached the final state, it can then
+        construct the parse tree for the given input string.</p>
+
+    <p>LR Parsing Tables are a powerful tool for parsing languages. They provide a simple and efficient way to construct
+        a
+        parse tree from a given grammar. They are also very flexible, allowing for the addition of new production rules
+        and
+        modifications to existing ones. With the help of LR Parsing Tables, languages can be quickly and accurately
+        parsed.
+    </p>
+
+</body>
+
+</html>
