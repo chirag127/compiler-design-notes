@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Unit 4</title>
+</head>
+
+<body>
+
+    <h1>Unit 4</h1>
+
+    <h2>
+        Symbol tables in c
+    </h2>
+
+    <p>
+        The following example shows how to create a symbol table.
+
+    </p>
+    <h2>Data structure for symbols tables</h2>
+
+    <p>Symbol tables are an important part of compiler design and are used to store information about variables,
+        functions,
+        and other symbols used in a program. Symbol tables are typically implemented using hash tables or binary search
+        trees.</p>
+
+    <p>A hash table is an efficient data structure for storing key-value pairs. It uses a hash function to compute a
+        unique
+        index for each key, and stores the associated value at that index. To look up a value, the hash function is used
+        again to calculate the index of the key, which is then used to access the correct value in the table. Hash
+        tables
+        can be used for symbol tables because of their fast lookup time.</p>
+
+    <p>Binary search trees are another type of data structure that can be used for symbol tables. A binary search tree
+        is a
+        tree-like structure with nodes that store key-value pairs. To look up a value, the key is used to traverse the
+        tree
+        and find the associated value. Binary search trees are slower than hash tables for lookups, but they provide an
+        easy
+        way to traverse and modify the contents of the table.</p>
+
+    <p>Symbol tables are an important part of compiler design and are used to store information about variables,
+        functions,
+        and other symbols used in a program. Depending on the application, either a hash table or binary search tree can
+        be
+        used to implement the symbol table. Both data structures provide fast lookup times, but binary search trees
+        offer
+        additional flexibility.</p>
+    <h2> representing scope information. Run-Time
+        Administration: Implementation of simple stack allocation scheme</h2>
+
+    <p>A symbol table is a data structure used by a compiler to store information about the program being compiled. It
+        is
+        used to store identifiers, such as variables and labels, as well as the locations in code where they are defined
+        and
+        used. The symbol table is also used to store the scope information for each identifier. Scope information is
+        essential to understanding the context in which an identifier is used and can be used for type checking and code
+        optimization.</p>
+
+    <p>Scope information is used to determine the lexical extent of a declaration, which is the region of a program in
+        which
+        the declaration is visible. In a compiler, the scope of a declaration is usually limited to the block in which
+        the
+        declaration is made. For example, a variable declared within a loop will only be visible inside the loop, and a
+        variable declared in a function will only be visible inside that function.</p>
+
+    <p>When implementing a simple stack allocation scheme, the symbol table is used to store the scope information for
+        each
+        identifier. Each time the compiler enters a new block or scope, it adds a new entry to the symbol table. The
+        entry
+        contains the information about the identifiers in the current block, such as the type, size, and location in
+        memory.
+        When the compiler leaves the block, the entry is removed from the symbol table.</p>
+
+    <p>The symbol table is also used to store the scope information for each identifier. This information is used to
+        determine the extent of a declaration, which is the region of a program in which the declaration is visible.
+        This
+        allows the compiler to ensure that an identifier is only used in its intended scope, and can be used for type
+        checking and code optimization.</p>
+
+    <p>In summary, the symbol table is used to store the scope information for each identifier when implementing a
+        simple
+        stack allocation scheme. This information is used to determine the extent of a declaration, which is the region
+        of a
+        program in which the declaration is visible. This allows the compiler to ensure that an identifier is only used
+        in
+        its intended scope, and can be used for type checking and code optimization.</p>
+
+    <h2> storage allocation in block
+        structured language. Error Detection & Recovery: Lexical Phase errors</h2>
+
+    <p>Storage allocation in a block-structured language is the process of assigning memory to variables and other data
+        structures. The process is usually handled by a compiler, and the memory allocated is usually allocated on the
+        stack
+        or in the heap. In a block-structured language, there is a distinction between global and local data, and the
+        compiler must determine how much memory to allocate to each type of data. </p>
+
+    <p>When a variable is declared, the compiler needs to determine the size of the variable and allocate the correct
+        amount
+        of memory. Variables in a block-structured language are usually allocated on the stack. This means that when a
+        variable is declared, the stack pointer is incremented by the amount of memory needed for the variable. When the
+        variable goes out of scope, the stack pointer is decremented by the same amount.</p>
+
+    <p>In addition to variables, the compiler must also allocate memory for other data structures such as arrays and
+        objects. Arrays are usually allocated in the heap, which is a section of memory that is managed by the operating
+        system. Objects are allocated in the heap as well, but they may also be allocated in the stack depending on the
+        language. The compiler must also be able to track which objects are in use and which are not so that they can be
+        properly freed when they are no longer needed.</p>
+
+    <p>Error detection and recovery is an important part of the storage allocation process. In a block-structured
+        language,
+        the compiler must detect any errors that occur during the allocation process and attempt to recover from them.
+        This
+        includes detecting any memory leaks, which occur when memory that is allocated is not properly freed. The
+        compiler
+        must also detect any out of bounds errors, which occur when a variable is accessed outside of its allocated
+        memory.
+        Finally, the compiler must check for any type errors, which occur when a variable is of the wrong type.</p>
+
+    <p>Symbol tables are an important part of compiler design, as they provide the compiler with information about the
+        variables and data structures in a program. A symbol table is a data structure that contains information about
+        each
+        variable or data structure in the program, such as its type, size, and location. The compiler uses this
+        information
+        to determine which variables and data structures need to be allocated memory, and how much memory to allocate.
+        In
+        addition, the symbol table is used to detect any type errors, as the compiler can compare the type of the
+        variable
+        to the type stored in the symbol table.</p>
+
+    <h2> syntactic phase errors
+        semantic errors.</h2>
+
+    <p>Syntax errors, also known as parse errors, occur when a program violates one or more of the syntax rules of a
+        programming language. Syntax errors are detected by the compiler and are reported with a specific error message
+        that
+        can help the programmer identify and fix the underlying problem.</p>
+
+    <p>Syntax errors can be caused by a variety of factors, such as incorrect spelling or a missing semi-colon. In
+        compiler
+        design, a symbol table is used to store information about all the symbols used in a program. The symbol table
+        contains information such as the type and value of each symbol, as well as its scope and location in the source
+        code. The symbol table is used by the compiler to check for syntax errors, as well as to resolve references to
+        symbols in the program.</p>
+
+    <p>Semantic errors, also known as logic errors, occur when the program produces an unexpected result due to
+        incorrect
+        logic. Semantic errors are not detected by the compiler and can be difficult for a programmer to identify and
+        fix.
+        Unlike syntax errors, semantic errors do not usually cause the program to terminate abruptly. Instead, the
+        program
+        may produce an incorrect result or may not produce any result at all.</p>
+
+    <p>In compiler design, semantic errors are usually handled by the semantic analyzer. The semantic analyzer is used
+        to
+        check for errors in the program that cannot be detected by the syntax analyzer. This includes errors such as
+        type
+        mismatches, undeclared variables, and incorrect operator usage. The semantic analyzer can also use the symbol
+        table
+        to check for errors such as uninitialized variables or variables that have been declared multiple times.</p>
+
+</body>
+
+</html>
